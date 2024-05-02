@@ -1,0 +1,20 @@
+# R Script for Project
+
+# Load required libraries
+library(ggplot2)
+
+# Generate random data with more points
+set.seed(123)
+data <- data.frame(
+  x = rnorm(200),
+  y = rnorm(200)
+)
+
+# Create scatter plot with linear regression line
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE, color = "blue") +
+  labs(title = "Scatter Plot of Random Data with Linear Regression Line",
+       x = "X-axis Label",
+       y = "Y-axis Label") +
+  theme_minimal()
